@@ -1,6 +1,6 @@
 -- user data
 INSERT INTO kidsnote.`user` (password,last_login,is_superuser,email,name,is_active,is_staff,created_at,updated_at,first_name,last_name) VALUES
-	('pbkdf2_sha256$260000$bEdUK1Jp39x0ibEUEMQ7Id$5M15tZRHqE3UwtnDZ9AoOx8pKy95CXcQl+h53Xn7vSA=','2023-07-27 06:35:22.152458000',0,'tq1234@test.com','',1,0,'2023-07-27 05:56:13.035124000','2023-07-27 05:56:13.035163000','','');
+	('pbkdf2_sha256$260000$bEdUK1Jp39x0ibEUEMQ7Id$5M15tZRHqE3UwtnDZ9AoOx8pKy95CXcQl+h53Xn7vSA=','2023-07-27 06:35:22.152458000',0,'test@test.com','',1,0,'2023-07-27 05:56:13.035124000','2023-07-27 05:56:13.035163000','','');
 
 
 -- label 테이블 데이터
