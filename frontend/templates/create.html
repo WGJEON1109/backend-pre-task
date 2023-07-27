@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>연락처 만들기</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div id="logoutBtnContainer" class="text-right mt-2"></div>
+        <h1>연락처 만들기</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="profile_photo">프로필 사진 (URL 입력)</label>
+                <input type="text" class="form-control" id="profile_photo" name="profile_photo">
+            </div>
+            <div class="form-group">
+                <label for="name">이름</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">이메일</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">전화번호</label>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="company">회사</label>
+                <input type="text" class="form-control" id="company" name="company">
+            </div>
+            <div class="form-group">
+                <label for="position">직책</label>
+                <input type="text" class="form-control" id="position" name="position">
+            </div>
+            <div class="form-group">
+                <label for="memo">메모</label>
+                <textarea class="form-control" id="memo" name="memo"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="address">주소</label>
+                <input type="text" class="form-control" id="address" name="address">
+            </div>
+            <div class="form-group">
+                <label for="birthday">생일</label>
+                <input type="date" class="form-control" id="birthday" name="birthday">
+            </div>
+            <div class="form-group">
+                <label for="website">웹사이트</label>
+                <input type="text" class="form-control" id="website" name="website">
+            </div>
+            
+            <div class="form-group">
+                <label for="label">라벨</label>
+                <div id="labelSuggestions"></div>
+                <div class="input-group">
+                    <input class="form-control" type="text" id="labels" placeholder="라벨을 선택하세요 (여러 개 가능)"></div>
+                    <div></div>
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addLabelModal">라벨 만들기</button>
+                    </div>
+                </div>
+                
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <div class="col-6">
+                    <button class="btn btn-primary btn-lg" onclick="goBack()">뒤로 가기</button>
+                    <button type="submit" class="btn btn-primary btn-lg" id="createProfileBtn">저장</button>
+                </div>
+            </div>
+    
+        </form>
+    </div>
+
+
+    <div class="modal fade" id="addLabelModal" tabindex="-1" role="dialog" aria-labelledby="addLabelModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addLabelModalLabel">라벨 만들기</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="labelForm">
+                        <div class="form-group">
+                            <label for="newLabel">새로운 라벨</label>
+                            <input type="text" class="form-control" id="label-name" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
+                    <button type="button" class="btn btn-primary" id="createLabelBtn">저장</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../static/js/create_profiles.js"></script>
+    
+</body>
+</html>

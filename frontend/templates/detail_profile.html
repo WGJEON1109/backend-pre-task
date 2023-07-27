@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>연락처 상세보기</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div id="logoutBtnContainer" class="text-right mt-2"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- 프로필 사진 표시를 위한 img 태그 -->
+                        <div id="profile-photo-container"></div>
+                        {% comment %} <img src="" class="img-thumbnail" id="profile-photo" alt="프로필 사진"> {% endcomment %}
+
+                        <h5 class="card-title" id="contact-name"></h5>
+                        <p class="card-text">이메일: <span id="contact-email"></span></p>
+                        <p class="card-text">전화번호: <span id="contact-phone"></span></p>
+                        <p class="card-text">직책 및 회사: <span id="contact-position"></span> (<span
+                                id="contact-company"></span>)</p>
+                        <p class="card-text">태그: <span id="contact-labels"></span></p>
+                        <p class="card-text">메모: <span id="contact-memo"></span></p>
+                        <p class="card-text">주소: <span id="contact-address"></span></p>
+                        <p class="card-text">생일: <span id="contact-birthday"></span></p>
+                        <p class="card-text">웹사이트: <span id="contact-website"></span></p>
+                        <button class="btn btn-primary" onclick="goBack()">뒤로 가기</button>
+                        <button class="btn btn-primary" onclick="goBack()">수정하기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+기
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../static/js/detail_profiles.js"></script>
+</body>
+
+</html>

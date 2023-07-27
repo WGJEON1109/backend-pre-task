@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>로그인</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div>
+        <label for="email">사용자 메일:</label>
+        <input type="text" id="email">
+    </div>
+    <div>
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password">
+    </div>
+    <button onclick="login()">로그인</button>
+
+    <script>
+        function login() {
+            var email = $('#email').val();
+            var password = $('#password').val();
+            var data = { email: email, password: password };
+
+            $.ajax({
+                url: '/api/auth',
+                type: 'POST',
+                dataType: 'json',
+                data: JSON.stringify(data),
+                contentType: 'application/json',
+                success: function (data, status, xhr) {
+                    console.log('로그인 성공');
+                    var token = data.token.access;
+                    console.log(token);
+                    localStorage.setItem("token", token);
+                    window.location.href = "/";
+                },
+                error: function (error) {
+                    console.error('로그인 실패:', error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
