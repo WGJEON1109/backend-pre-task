@@ -36,12 +36,10 @@ class ProfileSerializer(serializers.ModelSerializer):
                 try:  # 라벨 확인
                     label = Label.objects.get(name=label_data["name"])
                 except Exception as e:  # 없으면 생성
-                    print(e)
                     label = Label.objects.create(**label_data)
                 try:  # profile: label 중복확인
                     ProfileLabel.objects.get(profile=profile, label=label)
                 except Exception as e:  # 없으면 등록
-                    print(e)
                     ProfileLabel.objects.create(profile=profile, label=label)
                 profile.labels.add(label)
 
